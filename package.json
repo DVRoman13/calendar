@@ -1,0 +1,26 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "buid": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DVRoman13/calendar.git"
+  },
+  "author": "Roman Dunaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DVRoman13/calendar/issues"
+  },
+  "homepage": "https://github.com/DVRoman13/calendar#readme",
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^4.35.0",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
