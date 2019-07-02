@@ -4,18 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/dist/app.css">
-  <title>Document</title>
+  <link href="/dist/app.css" rel="stylesheet"></head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <title>Calendar</title>
 </head>
 <body>
-    <div class="wrapper">
-      <h1>Calendar</h1>
+    
+    <div class="header grid">
+      <div class="header-btns">
+        <button class="header-bnts__btn">
+        Добавить
+      </button>
+      <button class="header-bnts__btn">
+        Обновить
+      </button>
+      </div>
+      <div class="header-search"><input type="text" class="header-search__input"></div>
+    </div>
+    <div class="calendar">
+      <div class="calendar__header ">
+        <div class="calendar__nav grid">
+          <button class="calendar__nav-btns" id="prev"><i class="fas fa-chevron-left"></i></button>
+          <p class="calendar__date"></p>
+          <button class="calendar__nav-btns" id="last"><i class="fas fa-chevron-right"></i></button>
+          <button class="calendar__nav-today" id="last">Сегодня</button>
+        </div>
+      </div>
+      <div class="calendar__body grid">
+       
+      </div>
     </div>
 
 
 
-
-
-    <script src='/dist/app.js'></script>
+    <script type="text/javascript" src="/dist/app.js"></script>
 </body>
 </html>

@@ -1,3 +1,83 @@
-h1 {
-  color: blue
+
+@import 'vars';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+
+.header {
+  padding: 70px 30px 20px;
+  background-color: $mainGrey;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  &-bnts__btn {
+    width: 130px;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    background-color: $buttonColor;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  &-search {
+    justify-self: end;
+    &__input {
+      padding: 8px 0;
+      width: 288px;
+    }
+  }
+}
+
+.calendar {
+  padding: 0 30px;
+  &__date {
+    font-size: 20px;
+  }
+}
+
+.calendar__nav {
+  justify-items: start;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  grid-gap: 40px;
+  align-items: center;
+  padding: 20px 0;
+  &-btns {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid $buttonColor;
+    cursor: pointer;
+  }
+  &-today {
+    width: 130px;
+    border: none;
+    padding: 8px;
+    font-size: 16px;
+    background-color: $buttonColor;
+    color: #ffffff;
+    cursor: pointer;
+  }
+}
+
+
+.calendar__body {
+  justify-content: center;
+  grid-template-columns: repeat(7, 177px);
+  grid-template-rows: repeat(5, 127px);
+  margin-bottom: 30px;
+  div {
+    border: 1px solid #E2E2E2;
+  }
+}
+
