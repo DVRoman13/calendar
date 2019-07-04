@@ -1,4 +1,16 @@
 $buttonColor: #006FCA;
 $borderColor: #E2E2E2;
 $mainGrey: #F4F4F4;
-$pickedColor: #C1E4FF
+$pickedColor: #C1E4FF;
+
+
+
+@mixin button($width) {
+  width: $width;
+  border: none;
+  padding: 8px;
+  font-size: 16px;
+  background-color: $buttonColor;
+  color: #ffffff;
+  cursor: pointer;
+}

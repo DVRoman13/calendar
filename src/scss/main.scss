@@ -8,27 +8,27 @@
 }
 
 .grid {
-  display: grid;
+  display: grid !important;
 }
 
 .flex {
   display: flex;
 }
 
+.show {
+  display: block !important;
+}
+
+@mixin name {
+  
+}
 
 .header {
   padding: 70px 30px 20px;
   background-color: $mainGrey;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+  display: flex;
   &-bnts__btn {
-    width: 130px;
-    border: none;
-    padding: 8px;
-    font-size: 16px;
-    background-color: $buttonColor;
-    color: #ffffff;
-    cursor: pointer;
+    @include button(130px);
   }
   &-search {
     justify-self: end;
@@ -36,6 +36,9 @@
       padding: 8px 0;
       width: 288px;
     }
+  }
+  div {
+    display: inline-block;
   }
 }
 
@@ -58,6 +61,7 @@
     background-color: transparent;
     border: 1px solid $buttonColor;
     cursor: pointer;
+    position: relative; 
   }
   &-today {
     width: 130px;
@@ -74,10 +78,78 @@
 .calendar__body {
   justify-content: center;
   grid-template-columns: repeat(7, 177px);
-  grid-template-rows: repeat(5, 127px);
   margin-bottom: 30px;
   div {
     border: 1px solid #E2E2E2;
+    height: 127px;
+    position: relative;
+    span {
+      position: absolute;
+      right: 0;
+      top: 0px;
+    }
   }
 }
 
+.bg {
+  background-color: $mainGrey;
+}
+
+.picked {
+  background: $pickedColor;
+  padding: 5px 0 0 5px;
+  overflow: auto;
+  p {
+    margin-bottom: 10px;
+  }
+  .title-msg {
+    text-transform: uppercase;
+  }
+}
+
+
+.msgBox {
+  max-width: 400px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  background: #fff;
+  text-align: center;
+  .input-holder {
+    position: relative;
+  }
+  input {
+    display: block;
+    margin: 25px 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .error {
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    font-size: 10px;
+    color: red;
+    display: none;
+  }
+  textarea {
+    display: block;
+    margin: 15px 0;
+    width: 100%;
+  }
+  button {
+    @include button(100px);
+  }
+}
+
+.date-input {
+  position: absolute;
+  display: none !important;
+  input {
+    padding: 7px 0;
+  }
+}
+
+.header-btns:hover .date-input {
+  display: block !important;
+}

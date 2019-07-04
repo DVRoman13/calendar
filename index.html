@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="/dist/app.css" rel="stylesheet"></head>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-  <title>Calendar</title>
+  <link href="/dist/app.css" rel="stylesheet">
 </head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+  integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <script> src='https://cdnjs.cloudflare.com/ajax/libs/inputmask/4.0.8/inputmask/bindings/inputmask.binding.min.js'</script>
+
+<title>Calendar</title>
+</head>
+
 <body>
-    
-    <div class="header grid">
-      <div class="header-btns">
-        <button class="header-bnts__btn">
-        Добавить
-      </button>
-      <button class="header-bnts__btn">
-        Обновить
-      </button>
+
+  <div class="header">
+    <div class="header-btns">
+      <div class="quick-add-box ">
+        <button class="header-bnts__btn" id='quick-add'>
+          Добавить
+        </button>
       </div>
-      <div class="header-search"><input type="text" class="header-search__input"></div>
-    </div>
-    <div class="calendar">
-      <div class="calendar__header ">
-        <div class="calendar__nav grid">
-          <button class="calendar__nav-btns" id="prev"><i class="fas fa-chevron-left"></i></button>
-          <p class="calendar__date"></p>
-          <button class="calendar__nav-btns" id="last"><i class="fas fa-chevron-right"></i></button>
-          <button class="calendar__nav-today" id="last">Сегодня</button>
-        </div>
+      <div class="date-input">
+        <input type="text" id="data-input" placeholder="день месяц(1 - 12), год(2019)">
       </div>
-      <div class="calendar__body grid">
-       
+      <div>
+          <button class="header-bnts__btn" onclick="localStorage.clear(); window.location.reload()">
+              Удалить все
+            </button>
       </div>
     </div>
+  </div>
+  <div class="calendar">
+    <div class="calendar__header ">
+      <div class="calendar__nav grid">
+        <button class="calendar__nav-btns" id="prev"><i class="fas fa-chevron-left"></i></button>
+        <p class="calendar__date"></p>
+        <button class="calendar__nav-btns" id="next"><i class="fas fa-chevron-right"></i></button>
+        <button class="calendar__nav-today" onclick="window.location.reload()">Сегодня</button>
+      </div>
+    </div>
+    <div class="calendar__body grid">
 
+    </div>
+  </div>
 
-
-    <script type="text/javascript" src="/dist/app.js"></script>
+  <div class="msgBox mfp-hide">
+    <p>Добавьте или измените ваше сообщение</p>
+    <p id="msgDate"></p>
+    <div class="input-holder">
+      <input type="text" id='msgTitle' placeholder="Название">
+      <p class='error'>Поле обязательное для заполнения</p>
+    </div>
+    <input type="text" id='msgPeople' placeholder="Участники">
+    <textarea name="" id="msgText" cols="30" rows="10"></textarea>
+    <button id='addMsg'>Добавить</button>
+    <button id='cancelMsg'>Отмена</button>
+  </div>
+  </div>
+  <script type="text/javascript" src="/dist/app.js"></script>
 </body>
+
 </html>
