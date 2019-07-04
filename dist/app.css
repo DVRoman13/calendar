@@ -386,8 +386,7 @@ img.mfp-img {
 .header {
   padding: 70px 30px 20px;
   background-color: #F4F4F4;
-  grid-template-columns: 1fr 1fr;
-  align-items: center; }
+  display: flex; }
   .header-bnts__btn {
     width: 130px;
     border: none;
@@ -401,6 +400,8 @@ img.mfp-img {
     .header-search__input {
       padding: 8px 0;
       width: 288px; }
+  .header div {
+    display: inline-block; }
 
 .calendar {
   padding: 0 30px; }
@@ -418,7 +419,8 @@ img.mfp-img {
     padding: 10px;
     background-color: transparent;
     border: 1px solid #006FCA;
-    cursor: pointer; }
+    cursor: pointer;
+    position: relative; }
   .calendar__nav-today {
     width: 130px;
     border: none;
@@ -486,4 +488,13 @@ img.mfp-img {
     background-color: #006FCA;
     color: #ffffff;
     cursor: pointer; }
+
+.date-input {
+  position: absolute;
+  display: none !important; }
+  .date-input input {
+    padding: 7px 0; }
+
+.header-btns:hover .date-input {
+  display: block !important; }
 
