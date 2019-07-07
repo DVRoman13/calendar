@@ -6,7 +6,9 @@ function calendarCreate() {
 
   calendar.year = date.getFullYear();
   calendar.month = date.getMonth();
-  calendar.day = date.getDay()
+  calendar.day = date.getDay();
+  calendar.date = date.getDate();
+
 
   calendar.monthName = [
     'Январь', 'Февраль', 'Март', 'Апрель',
@@ -212,9 +214,10 @@ function calendarCreate() {
     }
 
     calendarBox.appendChild(days)
+
     if (calendar.month + 1 == d.getMonth()) {
-      let today = calendar.day
-      console.log(today - 1)
+      let today = calendar.date
+      console.log(today)
       calendarBox.children[today - 1].classList.add('bg')
     }
     calendar.getDataFromStorege(localStorage, year, month, calendarBox.getElementsByClassName('days'))
